@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import {Link} from 'react-router-dom'
-import {FiGithub, FiTwitter, FiLinkedin, FiCodepen, FiCode} from 'react-icons/fi'
+import {FiGithub, FiTwitter, FiLinkedin, FiCodepen,} from 'react-icons/fi'
 
 export const SidebarSocial = styled.div`
     width: 50px;
@@ -14,6 +13,11 @@ export const SidebarSocial = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+    &:hover{
+        outline: 2px dashed blue;
+    }
+    
     @media only screen and (max-width: 768px){
         display: none;
     }
@@ -90,6 +94,10 @@ export const SidebarEmail = styled.div`
     @media only screen and (max-width: 768px){
         display: none;
     }
+
+    &:hover{
+        outline: 2px dashed blue;
+    }
 `
 
 export const EmailLink = styled.a`
@@ -100,6 +108,8 @@ export const EmailLink = styled.a`
     width: 100%;
     display: flex;
     align-items: center;
+
+    
 
     transition: all 0.5s ease;
     cursor: pointer;

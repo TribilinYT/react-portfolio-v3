@@ -4,7 +4,7 @@ import { FooterContainer } from './FooterElements'
 const Footer = () => {
     return (
         <FooterContainer>
-            xxxxxxxxxxxxxxxxx
+            Design & developed by @DevCluna
         </FooterContainer>
     )
 }
