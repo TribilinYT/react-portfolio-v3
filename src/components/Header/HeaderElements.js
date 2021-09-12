@@ -7,7 +7,8 @@ export const HeaderContainer = styled.header`
     width: 100vw;
     height: 100px;
     max-width:100%; 
-    background-color: aqua;
+    background-color: ${({currentTheme})=>(currentTheme.bgColor)};
+    font-family: ${({currentTheme})=>(currentTheme.primaryFont)};
     position: sticky;
     top:0;
     margin-top: -102px;
@@ -17,6 +18,7 @@ export const HeaderContainer = styled.header`
     justify-content: space-between;
     user-select: none;
     /* display: none; */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
 `
 
 // ------------Mobile Menu-----------------
@@ -27,7 +29,8 @@ export const MobileMenu = styled.div`
     width: 100vw;
     height: 100vh;
     z-index: 100;
-    background: green;
+    background: ${({currentTheme})=>(currentTheme.colorMobileMenu)};
+    color: ${({currentTheme})=>(currentTheme.primaryColorText)};
     align-items: center;
     justify-content: space-evenly;
     display: flex;
@@ -49,7 +52,8 @@ export const  MobileMenuItem = styled.div`
 `
 
 export const MobileButtonResume = styled.a`
-
+    text-decoration: none;
+    color: ${({currentTheme})=>(currentTheme.primaryColorText)};
 `
 
 export const MenuClose = styled(GrClose)`
@@ -58,30 +62,33 @@ export const MenuClose = styled(GrClose)`
     cursor: pointer;
     right: 0.5em;
     top: 0.5em;
+    color: blue;
 `
-
 //-------------------------------------------
 
 export const Logo = styled.div`
     margin-left: 2.5em;
+    &:hover{
+        color: ${({currentTheme})=>(currentTheme.primaryColor)}
+    }
 `
 export const MenuBar = styled(GiHamburgerMenu)`
     cursor: pointer;
     font-size: 2.3em;
     margin-right: 0.9em;
 
-    /* @media (min-width: 768px){
+    @media (min-width: 768px){
         display: none;
-    } */
+    }
 `
 
 export const NavContainer = styled.nav`
     margin-right: 2.5em;
-    background: blue;
     width: 500px;
     display: flex;
     justify-content:space-between;
     align-items: center;
+    color: ${({currentTheme})=>(currentTheme.primaryColorText)};
 
     @media (max-width: 768px){
         display: none;
@@ -90,35 +97,58 @@ export const NavContainer = styled.nav`
 
 export const NavItem = styled(LinkS)`
     cursor: pointer;
+
 `
+export const SpanItem = styled.span`
+    &:hover{
+        color: ${({currentTheme})=>(currentTheme.primaryColor)}
+    }
+`
+
 export const ButtonResume = styled.a`
     padding: 0.9em 1.2em;
-    border: 2px solid red;
+    border: 1.5px solid ${({currentTheme})=>(currentTheme.primaryColor)};
     border-radius: 8px;
+    font-family: ${({currentTheme})=>(currentTheme.primaryFont)};
     text-decoration: none;
+    color: ${({currentTheme})=>(currentTheme.primaryColor)};
+    &:hover{
+        background: ${({currentTheme})=>(currentTheme.hoverButtonColor)};
+    }
 `
 
 // ------------Theme Picker----------------
 export const ThemePickerContainer = styled.div`
-    border: 2px dashed red;
+    /* border: 2px dashed red; */
     user-select: none;
     position: relative;
-    width: 100px;
-    
+    width: 160px;
     
 `
 
 export const ThemePickerBtn = styled.div`
-    background: blue;
+    padding: 0.5em;
     cursor: pointer;
+    border: 2px dashed ${({currentTheme})=>(currentTheme.primaryColor)};
 `
 
 export const ThemePickerContent = styled.div`
-    background: greenyellow;
+    /* background: greenyellow; */
     position: absolute;
+    width: 100%;
+    border: 2px dashed ${({currentTheme})=>(currentTheme.primaryColor)};
+    background: ${({currentTheme})=>(currentTheme.bgColor)};
+    margin-top: 0.8em;
 `
 
-export const ThemePickerItem = styled.div``
+export const ThemePickerItem = styled.div`
+    padding: 0.5em;
+    cursor: pointer;
+    color: ${({currentTheme})=>(currentTheme.primaryColorText)};
+    &:hover{
+        background: ${({currentTheme})=>(currentTheme.hoverColor)}
+    }
+`
 
 
 

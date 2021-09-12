@@ -1,20 +1,28 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import { MainContainer } from '../../components/Main/MainElements'
-import { AboutBack, AboutContainer, AboutDescription, AboutFront, AboutItem, AboutList, AboutListContainer,  AboutP, AboutPicture, AboutTitle, ContactDescription, ContactMail, ContactSubtitle, ContactTitle, DescriptionBussines, DescriptionRol, ExperienceContent, ExperienceDescription, ExperienceJobItem, ExperienceJobs, ExperienceTitle, HomeButton, HomeDescription, HomeName, HomeTitle, RolFunctions, RolItem, RolTime, SectionAbout, SectionContact, SectionContainer, SectionExperience, SectionHome } from '../../components/Section/SectionElements'
+import { ProjectItemVideo, AboutBack, AboutContainer, AboutDescription, AboutFront, AboutItem, AboutList, AboutListContainer,  AboutP, AboutPicture, AboutTitle, ContactDescription, ContactMail, ContactSubtitle, ContactTitle, DescriptionBussines, DescriptionRol, ExperienceContent, ExperienceDescription, ExperienceJobItem, ExperienceJobs, ExperienceTitle, HomeButton, HomeDescription, HomeName, HomeTitle, ItemHead, ProjectContainerItem, ProjectItem, ProjectsContainer, ProjectsDown, ProjectSlider, ProjectsUp, ProjectTitle, RolFunctions, RolItem, RolTime, SectionAbout, SectionContact, SectionContainer, SectionExperience, SectionHome, ProjectItemTitle, ProjectItemDescription, ProjectTags, ProjectItemTag, ProjectItemDescriptionContainer, ProjectLinks, GithubLink, LiveLink, ProjectsTitle, SectionProjects, Link } from '../../components/Section/SectionElements'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import { Container } from './HomeElements'
 import {experience} from "../../data/experience"
 import photo1 from "../../assets/img/cl-child.jpg"
 import photo2 from "../../assets/img/cl-adult.jpg"
+import {apps} from "../../data/apps"
+import {layouts} from "../../data/layouts"
+import {fragments} from "../../data/fragments"
+import ThemeContext from "../../context/themeContext"
 
 const Home = () => {
     const [jobs, setJobs] = useState(experience)
     const [currentPickedJob, setCurrentPickedJob] = useState(experience[0])
+    const [appsStatus, setAppsStatus] = useState(true)
+    const [layoutsStatus, setLayoutsStatus] = useState(false)
+    const [fragmentsStatus, setFragmentsStatus] = useState(false)
+    const {currentTheme} = useContext(ThemeContext)
     
     return (
-        <Container>
+        <Container currentTheme={currentTheme}>
             <Header></Header>
             <MainContainer>
 
@@ -23,33 +31,37 @@ const Home = () => {
                         <HomeTitle>
                             Hello World!
                         </HomeTitle>
-                        <HomeName>
+                        <HomeName currentTheme={currentTheme}>
                             Cristhian Luna
                         </HomeName>
                         
-                        <HomeDescription>
+                        <HomeDescription
+                            currentTheme={currentTheme}
+                        >
                             I'm a frontend developer
                             aimed to build (and design sometines web apps, static layouts)
                         </HomeDescription>
 
                         <HomeButton
+                            currenttheme={currentTheme}
                             to="projects"
                             smooth={true}
                             duration={500}
-                            offset= {2}
+
                             spy={true}
                             exact="true"
                         >
                             Checkout my work!
                         </HomeButton>
                     </SectionHome>
+
                 </SectionContainer>
 
                 <SectionContainer id="about">
                     <SectionAbout>
                         <AboutContainer>
                             <AboutDescription>
-                                <AboutTitle>
+                                <AboutTitle currentTheme={currentTheme}>
                                     About Me!
                                 </AboutTitle>
 
@@ -69,13 +81,13 @@ const Home = () => {
 
                                 <AboutListContainer>
                                     <AboutList>
-                                        <AboutItem>JavaScript (ES6+)</AboutItem>
-                                        <AboutItem>Node JS</AboutItem>
-                                        <AboutItem>React JS</AboutItem>
+                                        <AboutItem currentTheme={currentTheme}>JavaScript (ES6+)</AboutItem>
+                                        <AboutItem currentTheme={currentTheme}>Node JS</AboutItem>
+                                        <AboutItem currentTheme={currentTheme}>React JS</AboutItem>
                                     </AboutList>
                                     <AboutList>
-                                        <AboutItem>Express JS</AboutItem>
-                                        <AboutItem>Mongo DB</AboutItem>
+                                        <AboutItem currentTheme={currentTheme}>Express JS</AboutItem>
+                                        <AboutItem currentTheme={currentTheme}>Mongo DB</AboutItem>
                                     </AboutList>
                                 </AboutListContainer>
                                 
@@ -93,13 +105,15 @@ const Home = () => {
                 
                 <SectionContainer id="experience">
                     <SectionExperience>
-                        <ExperienceTitle>
+                        <ExperienceTitle currentTheme={currentTheme}>
                             Where I`ve Worked
                         </ExperienceTitle>
                         <ExperienceContent>
                             <ExperienceJobs>
                                 {jobs.map(job => (
-                                    <ExperienceJobItem status={job.status} key={job.id} onClick={()=>{
+                                    <ExperienceJobItem 
+                                        currentTheme={currentTheme}
+                                        status={job.status} key={job.id} onClick={()=>{
                                         setCurrentPickedJob(job)
                                         setJobs((prevState)=>(prevState.map(item =>(
                                                 item.id === job.id ? {...item, status: true} : item
@@ -117,9 +131,9 @@ const Home = () => {
 
                             </ExperienceJobs>
                             
-                            <ExperienceDescription>
+                            <ExperienceDescription currentTheme={currentTheme}>
                                 <DescriptionRol>
-                                    {currentPickedJob.title} <DescriptionBussines>@{currentPickedJob.business}</DescriptionBussines>
+                                    {currentPickedJob.title} <DescriptionBussines currentTheme={currentTheme} >@{currentPickedJob.business}</DescriptionBussines>
                                 </DescriptionRol>
 
                                 <RolTime>
@@ -128,7 +142,9 @@ const Home = () => {
 
                                 <RolFunctions>
                                     {currentPickedJob.description.map(job => (
-                                        <RolItem key={job.idDescription}>
+                                        <RolItem 
+                                        currentTheme={currentTheme}
+                                            key={job.idDescription}>
                                         {job.text}
                                     </RolItem>
                                     ))}
@@ -142,18 +158,155 @@ const Home = () => {
                     </SectionExperience>
                 </SectionContainer>
 
-                <SectionContainer id="projects">
-                    sasdsad
-                </SectionContainer>
+                <SectionProjects id="projects" appsStatus={appsStatus} layoutsStatus={layoutsStatus} fragmentsStatus={fragmentsStatus}>
+                    
+                    <ProjectsContainer>
+                    <ProjectsTitle currentTheme={currentTheme}>Some Things that I've Built</ProjectsTitle>
+
+                        <ProjectContainerItem currentTheme={currentTheme}>
+                            <ItemHead currentTheme={currentTheme}>
+                                <ProjectTitle onClick={()=>{setAppsStatus(!appsStatus)}}>Apps ({apps.length})</ProjectTitle>
+                                {appsStatus ? <ProjectsUp onClick={()=>{
+                                    setAppsStatus(!appsStatus)
+                                }} /> : <ProjectsDown onClick={()=>{
+                                    setAppsStatus(!appsStatus)
+                                }} />}
+                            </ItemHead>
+                            
+                            {appsStatus && <ProjectSlider itemsToShow={2}>
+                                {apps.map(app=>(
+                                    <ProjectItem  key={app.id}>
+                                        <ProjectItemVideo src={app.video} autoPlay loop/>
+                                        <ProjectItemDescriptionContainer>
+                                            <ProjectItemTitle currentTheme={currentTheme}>{app.title}</ProjectItemTitle>
+                                            <ProjectItemDescription currentTheme={currentTheme}>
+                                                {app.description}
+                                            </ProjectItemDescription>
+
+                                            <ProjectTags>
+                                                {app.techs.map(tech=>(
+                                                    <ProjectItemTag currentTheme={currentTheme} key={tech.id}>
+                                                    {tech.name}
+                                                </ProjectItemTag>
+                                                ))}
+                                            </ProjectTags>
+                                            <ProjectLinks>
+                                                <Link currentTheme={currentTheme} href={app.links.github} target="_blank" rel="noreferrer">
+                                                    <GithubLink />
+                                                </Link>
+                                                
+                                                <Link currentTheme={currentTheme} href={app.links.live} target="_blank" rel="noreferrer">
+                                                    <LiveLink />    
+                                                </Link>
+                                                
+                                            </ProjectLinks>
+                                        </ProjectItemDescriptionContainer>
+                                    </ProjectItem>
+                                ))}
+
+                                </ProjectSlider>}
+
+                        </ProjectContainerItem>
+
+                        <ProjectContainerItem currentTheme={currentTheme}>
+                            <ItemHead currentTheme={currentTheme}>
+                                <ProjectTitle onClick={()=>{setLayoutsStatus(!layoutsStatus)}}>Layouts ({layouts.length})</ProjectTitle>
+                                {layoutsStatus ? <ProjectsUp onClick={()=>{
+                                    setLayoutsStatus(!layoutsStatus)
+                                }} /> : <ProjectsDown onClick={()=>{
+                                    setLayoutsStatus(!layoutsStatus)
+                                }} />}
+                            </ItemHead>
+
+                            {layoutsStatus && <ProjectSlider itemsToShow={2}>
+                                {apps.map(layout=>(
+                                    <ProjectItem key={layout.id}>
+                                        <ProjectItemVideo src={layout.video} autoPlay loop/>
+                                        <ProjectItemDescriptionContainer>
+                                            <ProjectItemTitle currentTheme={currentTheme}>{layout.title}</ProjectItemTitle>
+                                            <ProjectItemDescription currentTheme={currentTheme}>
+                                                {layout.description}
+                                            </ProjectItemDescription>
+
+                                            <ProjectTags>
+                                                {layout.techs.map(tech=>(
+                                                    <ProjectItemTag currentTheme={currentTheme} key={tech.id}>
+                                                    {tech.name}
+                                                </ProjectItemTag>
+                                                ))}
+                                            </ProjectTags>
+                                            <ProjectLinks>
+                                                <Link currentTheme={currentTheme} href={layout.links.github} target="_blank" rel="noreferrer">
+                                                    <GithubLink currentTheme={currentTheme}/>
+                                                </Link>
+                                                
+                                                <Link currentTheme={currentTheme} href={layout.links.live} target="_blank" rel="noreferrer">
+                                                    <LiveLink />    
+                                                </Link>
+                                                
+                                            </ProjectLinks>
+                                        </ProjectItemDescriptionContainer>
+                                    </ProjectItem>
+                                ))}
+
+                                </ProjectSlider>}
+                        </ProjectContainerItem>
+                        
+                        <ProjectContainerItem currentTheme={currentTheme}>
+                            <ItemHead currentTheme={currentTheme}>
+                                <ProjectTitle onClick={()=>{setFragmentsStatus(!fragmentsStatus)}}>Fragments ({fragments.length})</ProjectTitle>
+                                {fragmentsStatus ? <ProjectsUp onClick={()=>{
+                                    setFragmentsStatus(!fragmentsStatus)
+                                }} /> : <ProjectsDown onClick={()=>{
+                                    setFragmentsStatus(!fragmentsStatus)
+                                }} />}
+                            </ItemHead>
+
+                            {fragmentsStatus && <ProjectSlider itemsToShow={2}>
+                                {apps.map(fragment=>(
+                                    <ProjectItem key={fragment.id}>
+                                        <ProjectItemVideo src={fragment.video} autoPlay loop/>
+                                        <ProjectItemDescriptionContainer>
+                                            <ProjectItemTitle currentTheme={currentTheme}>{fragment.title}</ProjectItemTitle>
+                                            <ProjectItemDescription currentTheme={currentTheme}>
+                                                {fragment.description}
+                                            </ProjectItemDescription>
+
+                                            <ProjectTags>
+                                                {fragment.techs.map(tech=>(
+                                                    <ProjectItemTag currentTheme={currentTheme}  key={tech.id}>
+                                                    {tech.name}
+                                                </ProjectItemTag>
+                                                ))}
+                                            </ProjectTags>
+                                            <ProjectLinks>
+                                                <Link currentTheme={currentTheme} href={fragment.links.github} target="_blank" rel="noreferrer">
+                                                    <GithubLink />
+                                                </Link>
+                                                
+                                                <Link currentTheme={currentTheme} href={fragment.links.live} target="_blank" rel="noreferrer">
+                                                    <LiveLink/>    
+                                                </Link>
+                                                
+                                            </ProjectLinks>
+                                        </ProjectItemDescriptionContainer>
+                                    </ProjectItem>
+                                ))}
+
+                                </ProjectSlider>}
+                        </ProjectContainerItem>
+
+                    </ProjectsContainer>
+                </SectionProjects>
                 
                 <SectionContainer id="contact">
                         <SectionContact>
                             <ContactTitle>What's Next?</ContactTitle>
-                            <ContactSubtitle>Contact Me!</ContactSubtitle>
+                            <ContactSubtitle currentTheme={currentTheme}>Contact Me!</ContactSubtitle>
                             <ContactDescription>
-                                Im actually looking for new opportunities so it will be nice to receive your proposals in my inbox. I'll try my best to reply you.
+                                I'm actually looking for new opportunities so it will be nice to receive your proposals in my inbox. I'll try my best to reply you.
                             </ContactDescription>
-                            <ContactMail href="mailto:jobs.cluna@gmail.com">Say Hi!</ContactMail>
+                            <ContactMail currentTheme={currentTheme}  href="mailto:jobs.cluna@gmail.com">Say Hi!</ContactMail>
                         </SectionContact>
                 </SectionContainer>
             </MainContainer>

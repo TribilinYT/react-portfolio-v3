@@ -4,7 +4,6 @@ import {FiGithub, FiTwitter, FiLinkedin, FiCodepen,} from 'react-icons/fi'
 export const SidebarSocial = styled.div`
     width: 50px;
     height: 300px;
-    background: lightcoral;
     position: fixed;
     bottom: 0;
     left: 25px;
@@ -15,7 +14,7 @@ export const SidebarSocial = styled.div`
     justify-content: space-between;
 
     &:hover{
-        outline: 2px dashed blue;
+        outline: 2px dashed ${({currentTheme})=>(currentTheme.primaryColor)};
     }
     
     @media only screen and (max-width: 768px){
@@ -42,8 +41,10 @@ export const Github = styled(FiGithub)`
     font-size: 20px;
     transition: all 0.5s ease;
     cursor: pointer;
+    color: ${({currenttheme})=>(currenttheme.primaryColorText)};
     &:hover{
         transform: translateY(-3px);
+        color: ${({currenttheme})=>(currenttheme.primaryColor)};
     }
 `
 
@@ -51,8 +52,10 @@ export const Twitter = styled(FiTwitter)`
     font-size: 20px;
     transition: all 0.5s ease;
     cursor: pointer;
+    color: ${({currenttheme})=>(currenttheme.primaryColorText)};
     &:hover{
         transform: translateY(-3px);
+        color: ${({currenttheme})=>(currenttheme.primaryColor)};
     }
 `
 
@@ -60,8 +63,10 @@ export const Linkedin = styled(FiLinkedin)`
     font-size: 20px;
     transition: all 0.5s ease;
     cursor: pointer;
+    color: ${({currenttheme})=>(currenttheme.primaryColorText)};
     &:hover{
         transform: translateY(-3px);
+        color: ${({currenttheme})=>(currenttheme.primaryColor)};
     }
 `
 
@@ -69,8 +74,10 @@ export const Codepen = styled(FiCodepen)`
     font-size: 20px;
     transition: all 0.5s ease;
     cursor: pointer;
+    color: ${({currenttheme})=>(currenttheme.primaryColorText)};
     &:hover{
         transform: translateY(-3px);
+        color: ${({currenttheme})=>(currenttheme.primaryColor)};
     }
 `
 //--------------------------------------------------
@@ -79,7 +86,6 @@ export const Codepen = styled(FiCodepen)`
 export const SidebarEmail = styled.div`
     width: 50px;
     height: 300px;
-    background: lightcoral;
     position: fixed;
     bottom: 0;
     right: 25px;
@@ -96,7 +102,7 @@ export const SidebarEmail = styled.div`
     }
 
     &:hover{
-        outline: 2px dashed blue;
+        outline: 2px dashed ${({currentTheme})=>(currentTheme.primaryColor)};
     }
 `
 
@@ -108,19 +114,20 @@ export const EmailLink = styled.a`
     width: 100%;
     display: flex;
     align-items: center;
-
+    color: ${({currentTheme})=>(currentTheme.primaryColorText)};
     
 
     transition: all 0.5s ease;
     cursor: pointer;
     &:hover{
         transform: translateY(-3px);
+        color: ${({currentTheme})=>(currentTheme.primaryColor)};
     }
 `
 
 export const Line = styled.div`
     width: 2px;
     height: 110px;
-    background: blue;
+    background: ${({currentTheme})=>(currentTheme.primaryColor)};
 `
 

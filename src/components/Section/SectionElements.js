@@ -1,18 +1,20 @@
 import styled from 'styled-components'
 import {Link as LinkS} from 'react-scroll'
+import {BsChevronDown, BsChevronUp} from 'react-icons/bs'
+import Carousel from 'react-elastic-carousel'
+import {FiGithub, FiExternalLink} from 'react-icons/fi'
+
 
 export const SectionContainer = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: blue;
-  border-bottom: 2px dashed  lightcyan;
+  /* background-color: blue; */
   position: relative;
-`
+`                                                                                                                        
 
 //---------------Section Home-------------
 export const SectionHome = styled.div`
   margin-top: 103px;
-  background: lightcoral;
   position: absolute;
   width: 100%;
   height: calc(100% - 103px);
@@ -28,33 +30,40 @@ export const HomeTitle = styled.h1`
 `
 
 export const HomeName = styled.h2`
-margin: 0;
+  margin: 0;
   font-size: 65px;
   margin-left: 50px;
+  color: ${({currentTheme})=>(currentTheme.primaryColor)};
 `
 
 export const HomeDescription = styled.p`
   max-width: 450px;
   font-size: 20px ;
   margin-left: 50px;
+  color: ${({currentTheme})=>(currentTheme.secondaryColorText)};
 `
 
 export const HomeButton = styled(LinkS)`
   display: flex;
   align-items: center;
-  border: 2px solid blue;
+  border: 1.5px solid ${({currenttheme})=>(currenttheme.primaryColor)};
+  color: ${({currenttheme})=>(currenttheme.primaryColor)};
   width: clamp(90px, 150px, 250px);
   padding: 1.2em;
   margin-left: 50px;
   border-radius: 4px;
   cursor: pointer;
+
+  &:hover{
+    background: ${({currenttheme})=>(currenttheme.hoverButtonColor)};
+  }
 `
 //----------------------------------------
 
 //---------------Section About------------
 export const SectionAbout = styled.div`
   margin-top: 103px;
-  background: lightcoral;
+  /* background: lightcoral; */
   position: absolute;
   width: 100%;
   height: calc(100% - 103px);
@@ -81,7 +90,9 @@ export const AboutDescription = styled.div`
   }
 `
 
-export const AboutTitle = styled.h1``
+export const AboutTitle = styled.h1`
+  color: ${({currentTheme})=>(currentTheme.primaryColor)};
+`
 
 export const AboutP = styled.p``
 
@@ -90,7 +101,7 @@ export const AboutP = styled.p``
 export const AboutPicture = styled.div`
   width: 230px;
   height: 250px;
-  background: lightcyan;
+  /* background: lightcyan; */
   margin: 1.5em;
   position: relative;
   border-radius: 0.5em;
@@ -111,7 +122,7 @@ export const AboutFront = styled.img`
   position:  absolute;
   width: 100%;
   height: 100%;
-  background-color: red;
+  /* background-color: red; */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border:none;
@@ -125,7 +136,7 @@ export const AboutBack = styled.img`
   transform: rotateY(180deg);
   height: 100%;
   width: 100%;
-  background: blue;
+  /* background: blue; */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border:none;
@@ -161,18 +172,170 @@ export const AboutItem= styled.li`
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent; 
   
-    border-left:7px solid blue; 
+    border-left:7px solid ${({currentTheme})=>(currentTheme.primaryColor)}; 
   }
 `
 
 //----------------------------------------
 
+//---------Section Projects---------------
+export const SectionProjects = styled.div`
+  /* background: green; */
+  width: 100%;
+  height: ${({appsStatus, layoutsStatus, fragmentsStatus})=>{
+    if((appsStatus && !layoutsStatus && !fragmentsStatus) || (!appsStatus && layoutsStatus && !fragmentsStatus) || (!appsStatus && !layoutsStatus && fragmentsStatus)){
+      return "750px"
+    }else if(!appsStatus && !layoutsStatus && !fragmentsStatus){
+      return "450px"
+    }else if ((appsStatus && layoutsStatus && !fragmentsStatus) || (!appsStatus && layoutsStatus && fragmentsStatus) || (appsStatus && !layoutsStatus && fragmentsStatus)){
+      return "1100px"
+    }
+    else if(appsStatus && layoutsStatus && fragmentsStatus){
+      return "1400px"
+    }
+    }};
+  position: relative;
+`
+
+export const ProjectsTitle = styled.h2`
+  margin-left: 1.2em;
+  color: ${({currentTheme})=>(currentTheme.primaryColor)};
+`
+
+export const ProjectsContainer = styled.div`
+  /* background: lightcoral; */
+  position: absolute;
+  margin-top: 103px;
+  width: 100%;
+  height: 100%;
+`
+
+export const ProjectContainerItem = styled.div`
+  margin: 1.5em;
+  border: 2px dashed ${({currentTheme})=>(currentTheme.primaryColor)};
+  padding: 0.3em 1.5em 0.8em 1.5em;
+`
+
+export const ItemHead = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid ${({currentTheme})=>(currentTheme.primaryColor)};
+  
+`
+
+export const ProjectTitle = styled.h3`
+  cursor: pointer;
+  user-select: none;
+  margin: 0;
+`
+
+export const ProjectsUp = styled(BsChevronUp)`
+  cursor: pointer;
+  font-size: 35px;
+  
+`
+
+export const ProjectsDown = styled(BsChevronDown)`
+  cursor: pointer;
+  font-size: 35px;
+`
+
+export const ProjectSlider = styled(Carousel)`
+  margin-top: 1.5em;
+  
+`
+
+export const ProjectItem = styled.div`
+  width: 350px;
+  height: 250px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.5s ease;
+
+  filter: grayscale(80%);
+  
+  
+  &:hover{
+    transform: scale(1.08);
+    filter: grayscale(0);
+  }
+`
+
+export const ProjectItemVideo = styled.video`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+
+`
+
+export const ProjectItemDescriptionContainer = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+  justify-content: flex-end;
+  margin: 1.2em;
+  bottom: 0;
+
+`
+
+export const ProjectItemTitle = styled.h3`
+  margin-bottom: 0;
+  color: ${({currentTheme})=>(currentTheme.primaryColor)};
+  text-shadow: 0.5px 0.5px black ;
+`
+
+export const ProjectItemDescription = styled.p`
+  text-align: right;
+  color: ${({currentTheme})=>(currentTheme.primaryColorText)};
+  text-shadow: 0.5px 0.5px black ;
+
+`
+
+export const ProjectTags = styled.div`
+  display: flex;
+  margin-bottom: 0.8em;
+  
+`
+
+export const ProjectItemTag = styled.div`
+  margin-right: 0.5em;
+  color: ${({currentTheme})=>(currentTheme.primaryColorText)};
+  text-shadow: 1px 1px black ;
+  &:hover{
+    color: ${({currentTheme})=>(currentTheme.primaryColor)};
+  }
+`
+
+export const ProjectLinks = styled.div`
+  display: flex;
+`
+export const Link = styled.a`
+  color: ${({currentTheme})=>(currentTheme.primaryColorText  )};
+  &:hover{
+    color: ${({currentTheme})=>(currentTheme.primaryColor)}
+  }
+`
+
+export const GithubLink = styled(FiGithub)`
+  font-size: 1.2em;
+  margin-right: 0.5em;
+  
+`
+export const LiveLink = styled(FiExternalLink)`
+  font-size: 1.3em;
+  
+`
+
+//----------------------------------------
 
 
 //--------------Section Experience --------
 export const SectionExperience = styled.div`
   margin-top: 103px;
-  background: lightcoral;
+  /* background: lightcoral; */
   position: absolute;
   width: 100%;
   height: calc(100% - 103px);
@@ -185,6 +348,7 @@ export const ExperienceTitle = styled.h2`
   user-select: none;
   padding: 0.5em 1.2em;
   margin-bottom: 0;
+  color: ${({currentTheme})=>(currentTheme.primaryColor)};
 `
 
 export const ExperienceContent = styled.div`
@@ -214,20 +378,22 @@ export const ExperienceJobItem = styled.button`
   padding: 0 0.9em;
   cursor: pointer;
   font-size: 1.2em;
-  background: ${({status})=>(status ? "rgba(180, 180, 5, 0.2)" : "transparent")};
+  color: ${({status, currentTheme})=>( status ? `${currentTheme.primaryColor}` : `${currentTheme.secondaryColorText}`)};
+  background: #0A192F;
   outline: none;
   border: none;
-  border-left: ${({status})=> (status ? "2px solid red" : "2px solid blue")};
+  border-left: ${({status, currentTheme})=> (status ? `2.5px solid ${currentTheme.primaryColor}` : `2.5px solid ${currentTheme.primaryColorText}`)};
 
 
   @media only screen and (max-width: 768px){
     width: 100%;
     border-left: none ;
-    border-bottom: 2px solid blue;
+    border-bottom: ${({status, currentTheme})=> (status ? `2px solid ${currentTheme.primaryColor}` : `2px solid ${currentTheme.primaryColorText}`)};
   }
 
   &:hover{
-    background: rgba(180, 180, 5, 0.2);
+    background: #0D2547;
+    color: ${({currentTheme})=>(currentTheme.primaryColor)}
   }
 
 `
@@ -238,7 +404,7 @@ export const ExperienceDescription = styled.div`
   padding: 0.5em;
 
   &:hover{
-    outline: 2px dashed blue;
+    outline: 2px dashed ${({currentTheme})=>(currentTheme.primaryColor)};
   }
 
   @media only screen and (max-width: 768px){
@@ -252,7 +418,7 @@ export const DescriptionRol = styled.h3`
 `
 
 export const DescriptionBussines = styled.span`
-  color: red;
+  color: ${({currentTheme})=>(currentTheme.primaryColor)};
   cursor: pointer;
   user-select: none;
 `
@@ -271,6 +437,7 @@ export const RolItem = styled.li`
   position: relative;
   padding-left: 0.9em;
   padding-bottom: 1.2em;
+  color: ${({currentTheme})=>(currentTheme.secondaryColorText)};
   
 
   &::before{
@@ -284,7 +451,7 @@ export const RolItem = styled.li`
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent; 
   
-    border-left:7px solid blue; 
+    border-left:7px solid ${({currentTheme})=>(currentTheme.primaryColor)}; 
   }
 
 
@@ -294,7 +461,7 @@ export const RolItem = styled.li`
 //---------Section Contact----------
 export const SectionContact = styled.div`
   margin-top: 103px;
-  background: lightcoral;
+  /* background: lightcoral; */
   position: absolute;
   width: 100%;
   height: calc(100% - 103px);
@@ -311,6 +478,7 @@ export const ContactTitle = styled.h2`
 export const ContactSubtitle = styled.h3`
   font-size: clamp(1.5em, 60px, 6.5em);
   margin: 0.09em;
+  color: ${({currentTheme})=>(currentTheme.primaryColor)};
 `
 
 export const ContactDescription = styled.p`
@@ -323,11 +491,16 @@ export const ContactDescription = styled.p`
 export const ContactMail = styled.a`
   font-size: 20px;
   text-decoration: none;
-  border: 2px solid red;
+  border: 1.5px solid ${({currentTheme})=>(currentTheme.primaryColor)};
+  color: ${({currentTheme})=>(currentTheme.primaryColor)};
   padding: 0.5em 1.5em;
   border-radius: 6px;
   user-select: none;
   margin-top: 0.5em;
   cursor: pointer;
+
+  &:hover{
+    background: ${({currentTheme})=>(currentTheme.hoverButtonColor)};
+  }
 `
 //-----------------------------
