@@ -63,7 +63,7 @@ export const themeData = [
         headerButtonTextColor: "#EB0202",
     
         headerThemePicker: "#0A192F",
-        hoverHeaderColor: "#203436",
+        hoverHeaderColor: "#EB0202",
 
         bgColor: "#0a192f",
         hoverColor: "#0D2547",
