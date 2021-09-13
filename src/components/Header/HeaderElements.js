@@ -7,7 +7,7 @@ export const HeaderContainer = styled.header`
     width: 100vw;
     height: 100px;
     max-width:100%; 
-    background-color: ${({currentTheme})=>(currentTheme.bgColor)};
+    background-color: ${({currentTheme})=>(currentTheme.headerColor)};
     font-family: ${({currentTheme})=>(currentTheme.primaryFont)};
     position: sticky;
     top:0;
@@ -17,6 +17,7 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-between;
     user-select: none;
+    color: ${({currentTheme})=>(currentTheme.headerColorText)};
     /* display: none; */
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
 `
@@ -62,14 +63,14 @@ export const MenuClose = styled(GrClose)`
     cursor: pointer;
     right: 0.5em;
     top: 0.5em;
-    color: blue;
+    
 `
 //-------------------------------------------
 
 export const Logo = styled.div`
     margin-left: 2.5em;
     &:hover{
-        color: ${({currentTheme})=>(currentTheme.primaryColor)}
+        color: ${({currentTheme})=>(currentTheme.hoverHeaderColor)}
     }
 `
 export const MenuBar = styled(GiHamburgerMenu)`
@@ -88,7 +89,6 @@ export const NavContainer = styled.nav`
     display: flex;
     justify-content:space-between;
     align-items: center;
-    color: ${({currentTheme})=>(currentTheme.primaryColorText)};
 
     @media (max-width: 768px){
         display: none;
@@ -101,17 +101,17 @@ export const NavItem = styled(LinkS)`
 `
 export const SpanItem = styled.span`
     &:hover{
-        color: ${({currentTheme})=>(currentTheme.primaryColor)}
+        color: ${({currentTheme})=>(currentTheme.hoverHeaderColor)}
     }
 `
 
 export const ButtonResume = styled.a`
     padding: 0.9em 1.2em;
-    border: 1.5px solid ${({currentTheme})=>(currentTheme.primaryColor)};
+    border: 1.5px solid ${({currentTheme})=>(currentTheme.headerBorderButtonColor)};
     border-radius: 8px;
     font-family: ${({currentTheme})=>(currentTheme.primaryFont)};
     text-decoration: none;
-    color: ${({currentTheme})=>(currentTheme.primaryColor)};
+    color: ${({currentTheme})=>(currentTheme.headerButtonTextColor)};
     &:hover{
         background: ${({currentTheme})=>(currentTheme.hoverButtonColor)};
     }
@@ -122,29 +122,30 @@ export const ThemePickerContainer = styled.div`
     /* border: 2px dashed red; */
     user-select: none;
     position: relative;
-    width: 160px;
+    width: 177px;
     
 `
 
 export const ThemePickerBtn = styled.div`
     padding: 0.5em;
     cursor: pointer;
-    border: 2px dashed ${({currentTheme})=>(currentTheme.primaryColor)};
+    border: 2px ${({currentTheme
+    })=>(currentTheme.borderStyle)} ${({currentTheme})=>(currentTheme.borderColor)};
 `
 
 export const ThemePickerContent = styled.div`
     /* background: greenyellow; */
     position: absolute;
     width: 100%;
-    border: 2px dashed ${({currentTheme})=>(currentTheme.primaryColor)};
-    background: ${({currentTheme})=>(currentTheme.bgColor)};
+    border: 2px ${({currentTheme})=>(currentTheme.borderStyle)} ${({currentTheme})=>(currentTheme.borderColor)};
+    background: ${({currentTheme})=>(currentTheme.headerThemePicker)};
     margin-top: 0.8em;
 `
 
 export const ThemePickerItem = styled.div`
     padding: 0.5em;
     cursor: pointer;
-    color: ${({currentTheme})=>(currentTheme.primaryColorText)};
+    color: ${({currentTheme})=>(currentTheme.headerColorText)};
     &:hover{
         background: ${({currentTheme})=>(currentTheme.hoverColor)}
     }

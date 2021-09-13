@@ -212,7 +212,7 @@ export const ProjectsContainer = styled.div`
 
 export const ProjectContainerItem = styled.div`
   margin: 1.5em;
-  border: 2px dashed ${({currentTheme})=>(currentTheme.primaryColor)};
+  border: 2px ${({currentTheme})=>(currentTheme.borderStyle)} ${({currentTheme})=>(currentTheme.primaryColor)};
   padding: 0.3em 1.5em 0.8em 1.5em;
 `
 
@@ -379,7 +379,7 @@ export const ExperienceJobItem = styled.button`
   cursor: pointer;
   font-size: 1.2em;
   color: ${({status, currentTheme})=>( status ? `${currentTheme.primaryColor}` : `${currentTheme.secondaryColorText}`)};
-  background: #0A192F;
+  background: ${({currentTheme})=>(currentTheme.bgColor)};
   outline: none;
   border: none;
   border-left: ${({status, currentTheme})=> (status ? `2.5px solid ${currentTheme.primaryColor}` : `2.5px solid ${currentTheme.primaryColorText}`)};
@@ -392,7 +392,7 @@ export const ExperienceJobItem = styled.button`
   }
 
   &:hover{
-    background: #0D2547;
+    background: ${({currentTheme})=>(currentTheme.hoverColor)};
     color: ${({currentTheme})=>(currentTheme.primaryColor)}
   }
 
@@ -404,7 +404,7 @@ export const ExperienceDescription = styled.div`
   padding: 0.5em;
 
   &:hover{
-    outline: 2px dashed ${({currentTheme})=>(currentTheme.primaryColor)};
+    outline: 2px ${({currentTheme})=>(currentTheme.borderStyle)} ${({currentTheme})=>(currentTheme.primaryColor)};
   }
 
   @media only screen and (max-width: 768px){
