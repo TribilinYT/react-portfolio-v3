@@ -67,8 +67,11 @@ export const MenuClose = styled(GrClose)`
 `
 //-------------------------------------------
 
-export const Logo = styled.div`
+export const Logo = styled.svg`
     margin-left: 2.5em;
+    color: red;
+    width: 70px;
+    height: 70px;
     &:hover{
         color: ${({currentTheme})=>(currentTheme.hoverHeaderColor)}
     }
