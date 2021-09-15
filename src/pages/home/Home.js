@@ -2,12 +2,11 @@ import React, {useState, useContext} from 'react'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import { MainContainer } from '../../components/Main/MainElements'
-import { ProjectItemVideo, AboutBack, AboutContainer, AboutDescription, AboutFront, AboutItem, AboutList, AboutListContainer,  AboutP, AboutPicture, AboutTitle, ContactDescription, ContactMail, ContactSubtitle, ContactTitle, DescriptionBussines, DescriptionRol, ExperienceContent, ExperienceDescription, ExperienceJobItem, ExperienceJobs, ExperienceTitle, HomeButton, HomeDescription, HomeName, HomeTitle, ItemHead, ProjectContainerItem, ProjectItem, ProjectsContainer, ProjectsDown, ProjectSlider, ProjectsUp, ProjectTitle, RolFunctions, RolItem, RolTime, SectionAbout, SectionContact, SectionContainer, SectionExperience, SectionHome, ProjectItemTitle, ProjectItemDescription, ProjectTags, ProjectItemTag, ProjectItemDescriptionContainer, ProjectLinks, GithubLink, LiveLink, ProjectsTitle, SectionProjects, Link, HomeRols, HomeRolP, AboutSpan } from '../../components/Section/SectionElements'
+import { ProjectItemVideo,  AboutContainer, AboutDescription, AboutFront, AboutItem, AboutList, AboutListContainer,  AboutP, AboutPicture, AboutTitle, ContactDescription, ContactMail, ContactSubtitle, ContactTitle, DescriptionBussines, DescriptionRol, ExperienceContent, ExperienceDescription, ExperienceJobItem, ExperienceJobs, ExperienceTitle, HomeButton, HomeDescription, HomeName, HomeTitle, ItemHead, ProjectContainerItem, ProjectItem, ProjectsContainer, ProjectsDown, ProjectSlider, ProjectsUp, ProjectTitle, RolFunctions, RolItem, RolTime, SectionAbout, SectionContact, SectionContainer, SectionExperience, SectionHome, ProjectItemTitle, ProjectItemDescription, ProjectTags, ProjectItemTag, ProjectItemDescriptionContainer, ProjectLinks, GithubLink, LiveLink, ProjectsTitle, SectionProjects, Link, HomeRolP, AboutSpan } from '../../components/Section/SectionElements'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import { Container } from './HomeElements'
 import {experience} from "../../data/experience"
 import photo1 from "../../assets/img/cl-child.jpg"
-import photo2 from "../../assets/img/cl-adult.jpg"
 import {apps} from "../../data/apps"
 import {layouts} from "../../data/layouts"
 import {fragments} from "../../data/fragments"
