@@ -3,6 +3,7 @@ import {Link as LinkS} from 'react-scroll'
 import {BsChevronDown, BsChevronUp} from 'react-icons/bs'
 import Carousel from 'react-elastic-carousel'
 import {FiGithub, FiExternalLink} from 'react-icons/fi'
+import Typed from 'react-typed'
 
 
 export const SectionContainer = styled.div`
@@ -34,6 +35,13 @@ export const HomeName = styled.h2`
   font-size: 65px;
   margin-left: 50px;
   color: ${({currentTheme})=>(currentTheme.primaryColor)};
+`
+
+export const HomeRolP = styled(Typed)`
+  font-size: clamp(1.5em, 90px, 7.5em);
+  margin-top: 0;
+  margin-left: 50px;
+  margin-bottom: 0;
 `
 
 export const HomeDescription = styled.p`
@@ -83,7 +91,7 @@ export const AboutContainer = styled.div`
 
 export const AboutDescription = styled.div`
   margin: 1.5em;
-  max-width:50%;
+  max-width: 69%;
 
   @media only screen and (max-width: 768px){
     max-width:100%;
@@ -96,11 +104,16 @@ export const AboutTitle = styled.h1`
 
 export const AboutP = styled.p``
 
+export const AboutSpan = styled.span`
+  color: ${({currentTheme})=>(currentTheme.primaryColor)};
+  font-weight: bold;
+  cursor: pointer;
+`
 
 
 export const AboutPicture = styled.div`
-  width: 230px;
-  height: 250px;
+  width: 250px;
+  height: 280px;
   /* background: lightcyan; */
   margin: 1.5em;
   position: relative;
@@ -108,34 +121,37 @@ export const AboutPicture = styled.div`
   transition: all 0.9s ease;
   transform-style: preserve-3d;
 
+  filter: saturate(30%);
+
   @media only screen and (max-width: 768px){
     display: none;
   }
 
   :hover{
-    transform: rotateY(180deg);
+    filter: saturate(70%);
+    transform: translateY(-12px);
     transition: all 0.9s ease; 
   }
 `
 
 export const AboutFront = styled.img`
   position:  absolute;
-  width: 100%;
-  height: 100%;
+  height: clamp( 150px, 100%, 380px);
+  width: clamp( 150px, 100%, 380px);
   /* background-color: red; */
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  /* -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; */
   border:none;
   object-fit: cover;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 6px;
 `
 
 export const AboutBack = styled.img`
-  position: absolute;
+  position: top;
   transform: rotateY(180deg);
-  height: 100%;
-  width: 100%;
+  height: clamp( 150px, 100%, 350px);
+  width: clamp( 150px, 100%, 350px);
   /* background: blue; */
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -156,10 +172,14 @@ export const AboutList = styled.ul`
 `
 
 export const AboutItem= styled.li`
- position: relative;
+  position: relative;
   padding-left: 0.9em;
   padding-bottom: 1.2em;
-  
+  cursor: pointer;
+
+  &:hover{
+    color: ${({currentTheme})=>(currentTheme.primaryColor)}
+  }
 
   &::before{
     content: "";
@@ -247,7 +267,7 @@ export const ProjectSlider = styled(Carousel)`
 `
 
 export const ProjectItem = styled.div`
-  width: 350px;
+  width: 270px;
   height: 250px;
   cursor: pointer;
   position: relative;

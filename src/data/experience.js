@@ -2,7 +2,7 @@ export const experience = [
     {
         id: 0,
         title: "Frontend Developer",
-        time: "July - December 2015",
+        time: "July - December 2019",
         status: true,
         business: "Freelance",
         description: [
