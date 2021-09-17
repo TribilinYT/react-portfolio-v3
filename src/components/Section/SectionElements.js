@@ -244,6 +244,15 @@ export const ItemHead = styled.div`
   
 `
 
+export const NoteDiv = styled.div`
+  margin-top: 0.9em;
+`
+
+export const NoteSpan = styled.span`
+  color: ${({currentTheme})=>(currentTheme.primaryColor)};
+  font-weight: bold;
+`
+
 export const ProjectTitle = styled.h3`
   cursor: pointer;
   user-select: none;

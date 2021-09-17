@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react'
 import Footer from '../../components/Footer/Footer'
 import Header from '../../components/Header/Header'
 import { MainContainer } from '../../components/Main/MainElements'
-import { ProjectItemVideo,  AboutContainer, AboutDescription, AboutFront, AboutItem, AboutList, AboutListContainer,  AboutP, AboutPicture, AboutTitle, ContactDescription, ContactMail, ContactSubtitle, ContactTitle, DescriptionBussines, DescriptionRol, ExperienceContent, ExperienceDescription, ExperienceJobItem, ExperienceJobs, ExperienceTitle, HomeButton, HomeDescription, HomeName, HomeTitle, ItemHead, ProjectContainerItem, ProjectItem, ProjectsContainer, ProjectsDown, ProjectSlider, ProjectsUp, ProjectTitle, RolFunctions, RolItem, RolTime, SectionAbout, SectionContact, SectionContainer, SectionExperience, SectionHome, ProjectItemTitle, ProjectItemDescription, ProjectTags, ProjectItemTag, ProjectItemDescriptionContainer, ProjectLinks, GithubLink, LiveLink, ProjectsTitle, SectionProjects, Link, HomeRolP, AboutSpan } from '../../components/Section/SectionElements'
+import { ProjectItemVideo,  AboutContainer, AboutDescription, AboutFront, AboutItem, AboutList, AboutListContainer,  AboutP, AboutPicture, AboutTitle, ContactDescription, ContactMail, ContactSubtitle, ContactTitle, DescriptionBussines, DescriptionRol, ExperienceContent, ExperienceDescription, ExperienceJobItem, ExperienceJobs, ExperienceTitle, HomeButton, HomeDescription, HomeName, HomeTitle, ItemHead, ProjectContainerItem, ProjectItem, ProjectsContainer, ProjectsDown, ProjectSlider, ProjectsUp, ProjectTitle, RolFunctions, RolItem, RolTime, SectionAbout, SectionContact, SectionContainer, SectionExperience, SectionHome, ProjectItemTitle, ProjectItemDescription, ProjectTags, ProjectItemTag, ProjectItemDescriptionContainer, ProjectLinks, GithubLink, LiveLink, ProjectsTitle, SectionProjects, Link, HomeRolP, AboutSpan, NoteDiv, NoteSpan } from '../../components/Section/SectionElements'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import { Container } from './HomeElements'
 import {experience} from "../../data/experience"
@@ -17,8 +17,8 @@ const Home = () => {
     const [jobs, setJobs] = useState(experience)
     const [currentPickedJob, setCurrentPickedJob] = useState(experience[0])
     const [appsStatus, setAppsStatus] = useState(true)
-    const [layoutsStatus, setLayoutsStatus] = useState(false)
-    const [fragmentsStatus, setFragmentsStatus] = useState(false)
+    const [layoutsStatus, setLayoutsStatus] = useState(true)
+    const [fragmentsStatus, setFragmentsStatus] = useState(true)
     const {currentTheme} = useContext(ThemeContext)
 
     const breakpoints = [
@@ -196,6 +196,10 @@ const Home = () => {
                                     setAppsStatus(!appsStatus)
                                 }} />}
                             </ItemHead>
+
+                            <NoteDiv>
+                                <NoteSpan currentTheme={currentTheme}>Note:</NoteSpan> This section contains app with many functionalities.
+                            </NoteDiv>
                             
                             {appsStatus && <ProjectSlider itemsToShow={2} breakPoints={breakpoints}>
                                 {apps.map(app=>(
@@ -242,6 +246,10 @@ const Home = () => {
                                 }} />}
                             </ItemHead>
 
+                            <NoteDiv>
+                                <NoteSpan currentTheme={currentTheme}>Note:</NoteSpan> This section contains layouts with limited functionalities and iteractions.
+                            </NoteDiv>
+
                             {layoutsStatus && <ProjectSlider itemsToShow={2} breakPoints={breakpoints}>
                                 {layouts.map(layout=>(
                                     <ProjectItem key={layout.id}>
@@ -285,6 +293,10 @@ const Home = () => {
                                     setFragmentsStatus(!fragmentsStatus)
                                 }} />}
                             </ItemHead>
+
+                            <NoteDiv>
+                                <NoteSpan currentTheme={currentTheme}>Note:</NoteSpan> This section contains little pieces of code  with limited interactions.
+                            </NoteDiv>
 
                             {fragmentsStatus && <ProjectSlider itemsToShow={2} breakPoints={breakpoints}>
                                 {fragments.map(fragment=>(
