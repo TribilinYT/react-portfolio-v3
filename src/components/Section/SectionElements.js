@@ -267,38 +267,46 @@ export const ProjectSlider = styled(Carousel)`
 `
 
 export const ProjectItem = styled.div`
-  width: 270px;
+  width: 350px;
   height: 250px;
   cursor: pointer;
   position: relative;
   transition: all 0.5s ease;
-
-  filter: grayscale(80%);
-  
   
   &:hover{
     transform: scale(1.08);
-    filter: grayscale(0);
   }
 `
 
 export const ProjectItemVideo = styled.video`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
   position: absolute;
+  transition: all 0.5s ease;
+  ${ProjectItem}:hover &{
+    visibility: visible;
+    filter: blur(0.8em) grayscale(100%);
+  }
+  
 
 `
 
 export const ProjectItemDescriptionContainer = styled.div`
   position: absolute;
+  visibility: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-end; 
   justify-content: flex-end;
   margin: 1.2em;
   bottom: 0;
+  
 
+  ${ProjectItem}:hover &{
+    visibility: visible;
+
+  }
 `
 
 export const ProjectItemTitle = styled.h3`
@@ -309,8 +317,8 @@ export const ProjectItemTitle = styled.h3`
 
 export const ProjectItemDescription = styled.p`
   text-align: right;
-  color: ${({currentTheme})=>(currentTheme.primaryColorText)};
-  text-shadow: 0.5px 0.5px black ;
+  color: ${({currentTheme})=>(currentTheme.colorTextProjects)};
+  text-shadow: 1.2px 1.2px black ;
 
 `
 
@@ -322,7 +330,7 @@ export const ProjectTags = styled.div`
 
 export const ProjectItemTag = styled.div`
   margin-right: 0.5em;
-  color: ${({currentTheme})=>(currentTheme.primaryColorText)};
+  color: ${({currentTheme})=>(currentTheme.colorTextProjects)};
   text-shadow: 1px 1px black ;
   &:hover{
     color: ${({currentTheme})=>(currentTheme.primaryColor)};
@@ -333,7 +341,7 @@ export const ProjectLinks = styled.div`
   display: flex;
 `
 export const Link = styled.a`
-  color: ${({currentTheme})=>(currentTheme.primaryColorText  )};
+  color: ${({currentTheme})=>(currentTheme.colorTextProjects )};
   &:hover{
     color: ${({currentTheme})=>(currentTheme.primaryColor)}
   }
@@ -342,7 +350,7 @@ export const Link = styled.a`
 export const GithubLink = styled(FiGithub)`
   font-size: 1.2em;
   margin-right: 0.5em;
-  
+  text-shadow: 10px 10px red;
 `
 export const LiveLink = styled(FiExternalLink)`
   font-size: 1.3em;

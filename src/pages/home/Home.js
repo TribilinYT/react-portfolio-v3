@@ -24,7 +24,7 @@ const Home = () => {
     const breakpoints = [
         { width: 1, itemsToShow: 1 },
         { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
-        { width: 850, itemsToShow: 3 },
+        { width: 850, itemsToShow: 2 },
         { width: 1150, itemsToShow: 4, itemsToScroll: 2 },
         { width: 1450, itemsToShow: 5 },
         { width: 1750, itemsToShow: 6 },
@@ -200,7 +200,7 @@ const Home = () => {
                             {appsStatus && <ProjectSlider itemsToShow={2} breakPoints={breakpoints}>
                                 {apps.map(app=>(
                                     <ProjectItem  key={app.id}>
-                                        <ProjectItemVideo src={app.video} autoPlay loop/>
+                                        <ProjectItemVideo muted src={app.video} autoPlay loop/>
                                         <ProjectItemDescriptionContainer>
                                             <ProjectItemTitle currentTheme={currentTheme}>{app.title}</ProjectItemTitle>
                                             <ProjectItemDescription currentTheme={currentTheme}>
@@ -245,7 +245,7 @@ const Home = () => {
                             {layoutsStatus && <ProjectSlider itemsToShow={2} breakPoints={breakpoints}>
                                 {layouts.map(layout=>(
                                     <ProjectItem key={layout.id}>
-                                        <ProjectItemVideo src={layout.video} autoPlay loop/>
+                                        <ProjectItemVideo muted src={layout.video} autoPlay loop/>
                                         <ProjectItemDescriptionContainer>
                                             <ProjectItemTitle currentTheme={currentTheme}>{layout.title}</ProjectItemTitle>
                                             <ProjectItemDescription currentTheme={currentTheme}>
@@ -289,8 +289,8 @@ const Home = () => {
                             {fragmentsStatus && <ProjectSlider itemsToShow={2} breakPoints={breakpoints}>
                                 {fragments.map(fragment=>(
                                     <ProjectItem key={fragment.id}>
-                                        <ProjectItemVideo src={fragment.video} autoPlay loop/>
-                                        <ProjectItemDescriptionContainer>
+                                        <ProjectItemVideo muted src={fragment.video} autoPlay loop/>
+                                        <ProjectItemDescriptionContainer >
                                             <ProjectItemTitle currentTheme={currentTheme}>{fragment.title}</ProjectItemTitle>
                                             <ProjectItemDescription currentTheme={currentTheme}>
                                                 {fragment.description}

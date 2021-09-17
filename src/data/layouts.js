@@ -1,13 +1,15 @@
-import video1 from "../assets/videos/video1.mp4"
+import volanti from "../assets/videos/layouts/volanti_layout.mp4"
+import dolla from "../assets/videos/layouts/dolla_layout.mp4"
+
 export  const layouts = [
     {
         id: 1,
-        title: "Lorem ipsum sadadad sadasdasd",
-        description: "adsaddas dasdasd asdasd asdas d asdasdas d asd asd asdadas dsa dasdasd ",
+        title: "Volanti - Layout",
+        description: "A single page aplication for flight low cost bussines.",
         techs:[
             {
                 id:1,
-                name: "Angular"
+                name: "Styled-components"
             },
             {
                 id:2,
@@ -15,13 +17,38 @@ export  const layouts = [
             },
             {
                 id:3,
-                name: "Vue"
+                name: "Node JS"
             },
         ],
-        video: video1,
+        video: volanti,
         links:{
-            live: "https://www.sadasdadsad.com",
-            github: "https://www.github.com"
+            live: "https://reverent-swanson-845540.netlify.app/",
+            github: "https://github.com/TribilinYT/volanti-react-responsive-frontpage-devcluna"
+        }
+    },
+
+    {
+        id: 2,
+        title: "Dolla - Layout",
+        description: "A single page aplication for Banking business sevices.",
+        techs:[
+            {
+                id:1,
+                name: "Styled-components"
+            },
+            {
+                id:2,
+                name: "React"
+            },
+            {
+                id:3,
+                name: "Node JS"
+            },
+        ],
+        video: dolla,
+        links:{
+            live: "https://competent-franklin-7f8158.netlify.app",
+            github: "https://github.com/TribilinYT/dolla-react-responsive-frontpage-devcluna"
         }
     },
     

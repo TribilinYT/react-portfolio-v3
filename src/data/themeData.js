@@ -12,7 +12,7 @@ export const themeData = [
         primaryColorText: "#ccd6f6",
         secondaryColorText: "#8892B0",
         headerColorText: "#E6E6E6",
-        projectsColorText: "",
+        colorTextProjects: "#E6E6E6",
 
         //header
         headerColor: "#0A192F",
@@ -52,7 +52,8 @@ export const themeData = [
         primaryColorText: "#ccd6f6",
         secondaryColorText: "#8892B0",
         headerColorText: "#E6E6E6",
-        projectsColorText: "",
+
+        colorTextProjects: "#E6E6E6",
 
         
 
@@ -67,6 +68,8 @@ export const themeData = [
 
         bgColor: "#0a192f",
         hoverColor: "#0D2547",
+
+       
 
         //footer
         footerColor: "#0A192F",
@@ -96,6 +99,8 @@ export const themeData = [
         headerColorText: "#E6E6E6",
         projectsColorText: "",
         mainColor:"#E6E6E6",
+
+        colorTextProjects: "#E6E6E6",
 
         //header
         headerColor: "#2B579A",

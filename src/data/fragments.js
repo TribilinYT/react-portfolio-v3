@@ -1,27 +1,26 @@
-import video1 from "../assets/videos/video1.mp4"
+import video1 from "../assets/videos/fragments/cyberpunk_fragment.mp4"
+
+
 export  const fragments = [
     {
         id: 1,
-        title: "Nexxus",
-        description: "adsaddas dasdasd asdasd asdas d asdasdas d asd asd asdadas dsa dasdasd ",
+        title: "CyberPunk - Logo",
+        description: `An single Glitched Text, based on CD Project Red's game "CyberPunk 2077" `,
+        hoverStatus: false,
         techs:[
             {
                 id:1,
-                name: "Angular"
+                name: "HTML"
             },
             {
                 id:2,
-                name: "React"
-            },
-            {
-                id:3,
-                name: "Vue"
+                name: "CSS 3"
             },
         ],
         video: video1,
         links:{
-            live: "https://www.sadasdadsad.com",
-            github: "https://www.github.com"
+            live: "https://agitated-pare-e51d28.netlify.app/",
+            github: "https://github.com/TribilinYT/CyberPunkLogo"
         }
     },
     
