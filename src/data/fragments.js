@@ -19,7 +19,7 @@ export  const fragments = [
         ],
         video: video1,
         links:{
-            live: "https://github.com/devCluna/react-portfolio-v3",
+            live: "https://cyberpunk-logo.netlify.app/",
             github: "https://github.com/TribilinYT/CyberPunkLogo"
         }
     },
