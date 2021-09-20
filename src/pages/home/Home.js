@@ -195,7 +195,7 @@ const Home = () => {
                             </ItemHead>
 
                             <NoteDiv>
-                                <NoteSpan currentTheme={currentTheme}>Note:</NoteSpan> This section contains app with many functionalities.
+                                <NoteSpan currentTheme={currentTheme}>Note:</NoteSpan> This section contains apps with many functionalities.
                             </NoteDiv>
                             
                             {appsStatus && <ProjectSlider itemsToShow={2} breakPoints={breakpoints}>
@@ -244,7 +244,7 @@ const Home = () => {
                             </ItemHead>
 
                             <NoteDiv>
-                                <NoteSpan currentTheme={currentTheme}>Note:</NoteSpan> This section contains layouts with limited functionalities and iteractions.
+                                <NoteSpan currentTheme={currentTheme}>Note:</NoteSpan> This section contains layouts with limited functionalities and interactions.
                             </NoteDiv>
 
                             {layoutsStatus && <ProjectSlider itemsToShow={2} breakPoints={breakpoints}>
