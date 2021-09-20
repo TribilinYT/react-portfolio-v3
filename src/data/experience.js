@@ -8,15 +8,15 @@ export const experience = [
         description: [
             {
                 idDescription: 0,
-                text:"Contributed with vanilla wireframes that allow UX team get a store ideas that finnally implemented to the production version."
+                text:"Contributed with vanilla wireframes that allow UX team to get store ideas that finally implemented to the production version."
             },
             {
                 idDescription: 1,
-                text:"Participated to software requirements specification; some of them were used to the final version."
+                text:"Participated in software requirements specification; some of them were used to the final version."
             },
             {
                 idDescription: 2,
-                text:"Developed some modules like user Login, Register and Rest API for user authentication."    
+                text:"Developed some modules like user Login, Register, and Rest API for user authentication"    
             },
         ]                            
     },
@@ -29,15 +29,15 @@ export const experience = [
         description: [
             {
                 idDescription: 0,
-                text:"Contributed with vanilla wireframes that allow UX team get a store ideas that finnally implemented to the production version."
+                text:"Contributed with vanilla wireframes that allow UX team to get store ideas that finally implemented to the production version."
             },
             {
                 idDescription: 1,
-                text:"Participated to software requirements specification; some of them were used to the final version."
+                text:"Participated in software requirements specification; some of them were used to the final version."
             },
             {
                 idDescription: 2,
-                text:"Developed some modules like user Login, Register and Rest API for user authentication."    
+                text:"Developed some modules like user Login, Register, and Rest API for user authentication"    
             },
         ]                         
     },
