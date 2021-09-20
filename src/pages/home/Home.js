@@ -87,18 +87,15 @@ const Home = () => {
                                 </AboutTitle>
 
                                 <AboutP>
-                                    Hi, I'm <AboutSpan currentTheme={currentTheme}>Cristhian Luna</AboutSpan>, a self-taught web developer since 2019, based in Ecuador. 
-                                    My first approach to the world of code, started in 2014 before entering to the college; thanks to the help of a teacher from my high school. To which I thank today, for having been a great guide on what my professional future would be.
-                                    I remember that I built a small blog with a simple notepad app, only using html and css. It looked like magic.
-                                    When I joined to the college, computers were no longer strange machines to me. Instead I understood that they were great works of engineering. In the middle of my career I was working for a small <AboutSpan currentTheme={currentTheme}>Software on Demand</AboutSpan> company, where I used frameworks like <AboutSpan currentTheme={currentTheme}> Android Studio, Ionic, Swift; etc.</AboutSpan>  Developing mobile apps. Then, I was able to work with web technologies such as PHP, SQL, Javascript in the same place.
+                                    Hi, I'm <AboutSpan currentTheme={currentTheme}>Cristhian Luna</AboutSpan>, a self-taught web developer since 2019, based in Ecuador. My first approach to the world of code, started in 2014 before entering college; thanks to the help of a teacher from my high school. Which I thank today, for having been a great guide on what my professional future would be. I remember that I built a small blog with a simple notepad app, only using HTML and CSS. It looked like magic. When I joined the college, computers were no longer strange machines to me. Instead, I understood that they were great works of engineering. In the middle of my career, I was working for a small <AboutSpan currentTheme={currentTheme}> Software on Demand </AboutSpan> company, where I used frameworks like <AboutSpan currentTheme={currentTheme}> Android Studio, Ionic, Swift</AboutSpan>; etc. Developing mobile apps. Then, I was able to work with web technologies such as <AboutSpan currentTheme={currentTheme}> PHP, SQL, Javascript</AboutSpan> in the same place. 
                                 </AboutP>
-
+                                
                                 <AboutP>
-                                    In 2017 I had the opportunity to develop <AboutSpan currentTheme={currentTheme}>IOT app's</AboutSpan>, among which I built an <AboutSpan currentTheme={currentTheme}>Autonomous Irrigation System</AboutSpan>, based on <AboutSpan currentTheme={currentTheme}> C #, Arduino and Rasberry Pi.</AboutSpan> Later in 2019, with a group of 5 developers from my college, we built an accounting system for a local veterinary 
-                                    health business. For this project we use some Javascript frameworks.
-                                    I'm currently building <AboutSpan currentTheme={currentTheme}>apps, websites, SPA's</AboutSpan>; with the <AboutSpan currentTheme={currentTheme}>MERN Stack</AboutSpan> and with a focus on <AboutSpan currentTheme={currentTheme}>Frontend Development.</AboutSpan>
+                                In 2017 I had the opportunity to develop <AboutSpan currentTheme={currentTheme}> IoT apps</AboutSpan>, among which I built an <AboutSpan currentTheme={currentTheme}>Autonomous Irrigation System</AboutSpan>, based on <AboutSpan currentTheme={currentTheme}> C #, Arduino and Rasberry Pi.</AboutSpan> Later in 2019, with a group of 5 developers from my college, we built an accounting system for a local veterinary 
+                                health business. For this project, we use some Javascript frameworks. 
+                                I'm currently building <AboutSpan currentTheme={currentTheme}>apps, websites, SPA's</AboutSpan>; with the <AboutSpan currentTheme={currentTheme}>MERN Stack</AboutSpan> and with a focus on <AboutSpan currentTheme={currentTheme}>Frontend Development.</AboutSpan>
                                 </AboutP>
-
+                                    
                                 <AboutP>
                                 Here are some few things that I have been working with:
                                 </AboutP>
