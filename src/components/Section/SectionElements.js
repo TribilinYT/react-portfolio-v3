@@ -318,7 +318,9 @@ export const ProjectItemDescriptionContainer = styled.div`
   }
 `
 
-export const ProjectItemTitle = styled.h3`
+export const ProjectItemTitle = styled.a`
+  text-decoration: none;
+  font-size: 1.2em;
   margin-bottom: 0;
   color: ${({currentTheme})=>(currentTheme.primaryColor)};
   text-shadow: 0.5px 0.5px black ;

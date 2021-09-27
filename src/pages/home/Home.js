@@ -203,7 +203,9 @@ const Home = () => {
                                     <ProjectItem  key={app.id}>
                                         <ProjectItemVideo muted src={app.video} autoPlay loop/>
                                         <ProjectItemDescriptionContainer>
-                                            <ProjectItemTitle currentTheme={currentTheme}>{app.title}</ProjectItemTitle>
+                                            <ProjectItemTitle currentTheme={currentTheme} href={app.links.live} target="_blank" rel="noreferrer">    
+                                                {app.title}
+                                            </ProjectItemTitle>
                                             <ProjectItemDescription currentTheme={currentTheme}>
                                                 {app.description}
                                             </ProjectItemDescription>
@@ -252,7 +254,9 @@ const Home = () => {
                                     <ProjectItem key={layout.id}>
                                         <ProjectItemVideo muted src={layout.video} autoPlay loop/>
                                         <ProjectItemDescriptionContainer>
-                                            <ProjectItemTitle currentTheme={currentTheme}>{layout.title}</ProjectItemTitle>
+                                            <ProjectItemTitle currentTheme={currentTheme} href={layout.links.live} target="_blank" rel="noreferrer">
+                                                {layout.title}
+                                            </ProjectItemTitle>
                                             <ProjectItemDescription currentTheme={currentTheme}>
                                                 {layout.description}
                                             </ProjectItemDescription>
@@ -300,7 +304,9 @@ const Home = () => {
                                     <ProjectItem key={fragment.id}>
                                         <ProjectItemVideo muted src={fragment.video} autoPlay loop/>
                                         <ProjectItemDescriptionContainer >
-                                            <ProjectItemTitle currentTheme={currentTheme}>{fragment.title}</ProjectItemTitle>
+                                            <ProjectItemTitle currentTheme={currentTheme} href={fragment.links.live} target="_blank" rel="noreferrer">
+                                                {fragment.title}
+                                            </ProjectItemTitle>
                                             <ProjectItemDescription currentTheme={currentTheme}>
                                                 {fragment.description}
                                             </ProjectItemDescription>
