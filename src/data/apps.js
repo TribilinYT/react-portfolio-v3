@@ -26,8 +26,8 @@ export  const apps = [
         ],
         video: ChatBud,
         links:{
-            live: "https://www.sadasdadsad.com",
-            github: "https://www.github.com"
+            live: "https://chatbub-react.netlify.app/",
+            github: "https://github.com/devCluna/ChatBud_Client"
         }
     },
 
