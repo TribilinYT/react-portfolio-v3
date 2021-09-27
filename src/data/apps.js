@@ -1,24 +1,30 @@
-import video1 from "../assets/videos/video1.mp4"
+import ChatBud from "../assets/videos/apps/chatbud_app.mp4"
+
 export  const apps = [
     {
         id: 1,
-        title: "Lorem ipsum sadadad sadasdasd",
-        description: "adsaddas dasdasd asdasd asdas d asdasdas d asd asd asdadas dsa dasdasd ",
+        title: "ChatBud - ChatApp",
+        description: "A MERN application, built to carry out encrypted messages, between users anonymously. ",
         techs:[
             {
                 id:1,
-                name: "Angular"
-            },
-            {
-                id:2,
                 name: "React"
             },
             {
+                id:2,
+                name: "Express"
+            },
+            {
                 id:3,
-                name: "Vue"
+                name: "MongoDB"
+            },
+           
+            {
+                id:4,
+                name: "Socket.io"
             },
         ],
-        video: video1,
+        video: ChatBud,
         links:{
             live: "https://www.sadasdadsad.com",
             github: "https://www.github.com"
