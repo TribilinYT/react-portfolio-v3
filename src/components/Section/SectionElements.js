@@ -295,7 +295,7 @@ export const ProjectItemVideo = styled.video`
   transition: all 0.5s ease;
   ${ProjectItem}:hover &{
     visibility: none;
-    filter: blur(0.2em) grayscale(100%) opacity(50%);
+    filter: blur(0.2em)  brightness(0.4) opacity(50%);
   }
   
 
