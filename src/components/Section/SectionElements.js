@@ -294,8 +294,8 @@ export const ProjectItemVideo = styled.video`
   position: absolute;
   transition: all 0.5s ease;
   ${ProjectItem}:hover &{
-    visibility: visible;
-    filter: blur(0.8em) grayscale(100%);
+    visibility: none;
+    filter: blur(0.2em) grayscale(100%) opacity(50%);
   }
   
 
@@ -320,6 +320,7 @@ export const ProjectItemDescriptionContainer = styled.div`
 
 export const ProjectItemTitle = styled.a`
   text-decoration: none;
+  font-weight: bolder;
   font-size: 1.2em;
   margin-bottom: 0;
   color: ${({currentTheme})=>(currentTheme.primaryColor)};
@@ -341,6 +342,7 @@ export const ProjectTags = styled.div`
 
 export const ProjectItemTag = styled.div`
   margin-right: 0.5em;
+  font-weight: bold;
   color: ${({currentTheme})=>(currentTheme.colorTextProjects)};
   text-shadow: 1px 1px black ;
   &:hover{
