@@ -11,7 +11,6 @@ const Header = () => {
     const [toggleMenu, setToggleMenu] = useState(false)
     const {currentTheme, setCurrentTheme} = useContext(ThemeContext)
     
-    console.log(currentTheme.colorMobileMenu)
     return (
         <>
         <MobileMenu toggleMenu={toggleMenu} currentTheme={currentTheme}>

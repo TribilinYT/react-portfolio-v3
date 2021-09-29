@@ -198,7 +198,7 @@ const Home = () => {
                                 <NoteSpan currentTheme={currentTheme}>Note:</NoteSpan> This section contains apps with many functionalities.
                             </NoteDiv>
                             
-                            {appsStatus && <ProjectSlider itemsToShow={2} breakPoints={breakpoints}>
+                            {appsStatus && <ProjectSlider itemsToShow={2} breakPoints={breakpoints} focusOnSelect={false}>
                                 {apps.map(app=>(
                                     <ProjectItem  key={app.id}>
                                         <ProjectItemVideo muted src={app.video} autoPlay loop/>

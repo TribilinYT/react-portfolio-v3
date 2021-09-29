@@ -30,5 +30,4 @@ export  const apps = [
             github: "https://github.com/devCluna/ChatBud_Client"
         }
     },
-
 ]

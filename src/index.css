@@ -11,3 +11,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.rec.rec-arrow {
+  border-radius: 50%;
+  border: none;
+  color: #E6E6E6;
+  background-color: #53555A;
+}
+/* round buttons on hover */
+.rec.rec-arrow:hover {
+  border-radius: 50%;
+  color: #E6E6E6;
+  background-color: #53555A
+}
+/* hide disabled buttons */
+.rec.rec-arrow:disabled {
+  visibility: hidden;  
+}
+
+.rec.rec-arrow:hover:enabled{
+  background: #53555a80;
+}
+
+.rec.rec-arrow:focus:enabled{
+  background: #53555a80;
+}
+/* disable default outline on focused items */
+/* add custom outline on focused items */
+.rec-carousel-item:focus {
+  outline: none;
+  color: red;
+  box-shadow: inset 0 0 1px 1px lightgrey;
+}
+
+.rec.rec-dot.rec.rec-dot_active {
+  box-shadow: 0 0 1px 3px rgb(111, 111, 111);
+  background-color: rgba(81, 81, 81, 0.5);
+}
+
+.rec.rec-dot.rec.rec-dot_active:hover {
+  box-shadow: 0 0 1px 3px rgba(108, 108, 108, 0.5);
+}
+
+.rec.rec-dot:hover{
+  box-shadow: 0 0 1px 3px rgba(108, 108, 108, 0.5);
+}
+
