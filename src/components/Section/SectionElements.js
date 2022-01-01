@@ -276,7 +276,7 @@ export const ProjectSlider = styled(Carousel)`
 `
 
 export const ProjectItem = styled.div`
-  width: 350px;
+  width: 400px;
   height: 250px;
   cursor: pointer;
   position: relative;
