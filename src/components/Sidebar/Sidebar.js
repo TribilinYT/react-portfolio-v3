@@ -10,7 +10,7 @@ const Sidebar = () => {
         <>
             <SidebarSocial currentTheme={currentTheme}>
                 <SocialLink>
-                    <Link to={{pathname: "https://github.com/TribilinYT"}} target="_blank">
+                    <Link to={{pathname: "https://github.com/devCluna"}} target="_blank">
                         <Github currenttheme={currentTheme}/>
                     </Link>
                     
@@ -18,7 +18,7 @@ const Sidebar = () => {
                         <Twitter currenttheme={currentTheme}/>
                     </Link>
                     
-                    <Link to={{pathname:"https://www.linkedin.com/feed/"}} target="_blank">
+                    <Link to={{pathname:"https://www.linkedin.com/in/devcluna"}} target="_blank">
                         <Linkedin currenttheme={currentTheme}/>
                     </Link>
 
