@@ -1,5 +1,6 @@
 import ChatBud from "../assets/videos/apps/chatbud_app.mp4"
 import SpotifyClient from "../assets/videos/apps/spotify_client_app.mp4"
+import GoogleKeep from "../assets/videos/apps/google_keep_app.mp4"
 
 export  const apps = [
     {
@@ -53,6 +54,31 @@ export  const apps = [
         links:{
             live: "https://spotify-client.netlify.app/",
             github: "https://github.com/devCluna/react-spotify-clone-node"
+        }
+    },
+
+    {
+        id: 3,
+        title: "Google Keep - clone",
+        description: "A non official Google Keep client built with React.js & Styled components",
+        techs:[
+            {
+                id:1,
+                name: "React"
+            },
+            {
+                id:2,
+                name: "Express"
+            },
+            {
+                id:3,
+                name: "styled-components"
+            },
+        ],
+        video: GoogleKeep,
+        links:{
+            live: "https://google-keep-clone-client.netlify.app/",
+            github: "https://github.com/devCluna/google-keep-clone-client"
         }
     },
 ]
