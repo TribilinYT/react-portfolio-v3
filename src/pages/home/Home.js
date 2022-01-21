@@ -343,7 +343,7 @@ const Home = () => {
                             <ContactTitle>What's Next?</ContactTitle>
                             <ContactSubtitle currentTheme={currentTheme}>Contact Me!</ContactSubtitle>
                             <ContactDescription>
-                            I am currently looking for new opportunities, so it would be great to receive your proposals in my inbox. I will try my best to answer you, as soon as possible. :)
+                            I'm currently looking for new opportunities, so it would be great to receive your proposals in my inbox. I will try my best to answer you, as soon as possible. :)
                             </ContactDescription>
                             <ContactMail currentTheme={currentTheme}  href="mailto:jobs.cluna@gmail.com">Say Hi!</ContactMail>
                         </SectionContact>
