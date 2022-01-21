@@ -1,5 +1,6 @@
 import volanti from "../assets/videos/layouts/volanti_layout.mp4"
 import dolla from "../assets/videos/layouts/dolla_layout.mp4"
+import valorant from "../assets/videos/layouts/valorant_login_page_layout.mp4"
 
 export  const layouts = [
     {
@@ -46,6 +47,27 @@ export  const layouts = [
             },
         ],
         video: dolla,
+        links:{
+            live: "https://competent-franklin-7f8158.netlify.app",
+            github: "https://github.com/TribilinYT/dolla-react-responsive-frontpage-devcluna"
+        }
+    },
+
+    {
+        id: 3,
+        title: "Valorant Login Page",
+        description: "A login page clone based on Riot game called Valorant",
+        techs:[
+            {
+                id:1,
+                name: "CSS 3"
+            },
+            {
+                id:2,
+                name: "Html"
+            },
+        ],
+        video: valorant,
         links:{
             live: "https://competent-franklin-7f8158.netlify.app",
             github: "https://github.com/TribilinYT/dolla-react-responsive-frontpage-devcluna"
